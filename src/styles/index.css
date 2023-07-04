@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  /* min-height: 100vh; */
+  background-color: #FFF7ED;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body.waiting * {
+  cursor: wait;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.4rem;
+  background-color: #FFF7ED;
+}
+
+header > nav {
+  display: flex;
+  gap: 1.8rem;
+}
+
+header > h1 > a {
+  color: black;
+  font-weight: 900;
+}
+
+header > nav > a {
+  color: #4D4D4D;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #AAA;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: #252525;
+}
+
+.link-button {
+  color: #FFF;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.host-navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.host-navbar > a {
+  color: #4D4D4D;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.small > a {
+  font-size: 95%;
+}
+
+header > nav > a:hover,
+.host-navbar > a:hover,
+.active,
+.host-navbar .active {
+  color: #161616;
+  text-decoration: underline;
+}
+
+.active,
+.host-navbar .active {
+  font-weight: bold;
+}
+
+nav > a > svg {
+  stroke: #4D4D4D;
+}
+
+.active > svg {
+  stroke: #161616;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 11.9rem);
+  margin: auto 0;
+}
+
+.mini {
+  flex: 1;
+  display: flex;
+  margin: auto 0;
+}
+
+.layout {
+  margin: auto 2.4rem;
+}
+
+
+/*** HOME PAGE ***/
+
+.home {
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/images/home-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home--content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+  color: #FFF;
+  font-size: 1.5rem;
+  max-width: calc(100vw - 5rem);
+}
+
+.home--content > h1 {
+  font-size: 3.3rem;
+  font-weight: 800;
+}
+
+.orange-button {
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  background-color: #FF8C38;
+}
+
+
+/*** ABOUT PAGE ***/
+
+.about > img {
+  width: 100%;
+}
+
+.about--content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #161616;
+  font-weight: 500;
+  margin: 2.4rem;
+
+  /* max-width: 100vw; */
+}
+
+.about--content > p {
+  line-height: 150%;
+}
+
+.about--cta {
+  border-radius: 5px;
+  background-color: #FFCC8D;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.about--cta > a {
+  display: inline-block;
+  padding: 0.75rem 1.3rem;
+  background-color: #161616;
+  margin-top: 1.5rem;
+
+  /* transition: transform .1s ease-in-out; */
+}
+
+
+/*** VANS PAGE ***/
+
+.vans--content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin: 4rem 2.4rem;
+  color: #161616;
+}
+
+.vans--filtering {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.vans--filter {
+  color: #4D4D4D;
+}
+
+.vans--clear-filter {
+  color: #4D4D4D;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 0.06rem solid #4D4D4D;
+}
+
+.van-cards { 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin-top: 1.875rem;
+} /* NEED TO CHANE display!!! */
+
+
+/*** VAN CARD ***/
+
+.van-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  color: #161616;
+  max-width: 14.15rem;
+  cursor: pointer;
+}
+
+.van-card > img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.van-card--content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.van-card--content-p1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.van-card--content-p2 {
+  text-align: right;
+  line-height: 115%;
+  margin-top: 0.2rem;
+}
+
+.van-name {
+  font-size: 1.32rem;
+  font-weight: 600;
+}
+
+.van-type {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0.48rem 1.1rem;
+  border-radius: 5px;
+  width: min-content;
+  background-color: #FFEAD0;
+  border: none;
+  cursor: default;
+  transition: 350ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button.van-type {
+  cursor: pointer;
+}
+
+.van-type:hover {
+  color: #FFEAD0;
+}
+
+.van-type.selected {
+  color: #FFEAD0;
+}
+
+.van-type.simple:hover, .van-type.simple.selected {
+  background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected {
+  background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected {
+  background-color: #161616;
+}
+
+.van-price {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.per-day {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.van-description {
+  line-height: 150%;
+  font-weight: 500;
+  font-size: 0.97rem;
+}
+
+
+/*** VAN DETAIL PAGE ***/
+
+.van-detail--back {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #201F1D;
+  font-weight: 500;
+  text-decoration: underline;
+  margin: 3rem 0 2rem;
+  max-width: fit-content;
+}
+
+.van-detail--container {
+  margin: auto 2.4rem 3rem;
+}
+
+.van-detail--container > img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.van-detail--content {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.van-name.big {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.van-price.big {
+  font-size: 140%;
+}
+
+.per-day.big {
+  font-size: 110%;
+}
+
+
+.van-detail--content > a {
+  padding: 0.9rem;
+}
+
+
+
+
+.host-vans {
+  margin: 2.5rem auto;
+}
+
+.host-vans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.van-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  border-radius: 6px;
+  background-color: #FFF;
+  padding: 1.4rem 1.9rem;
+  height: 8rem;
+}
+
+.van-list-item > img {
+  align-self: center;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.van-list-item--content {
+  color: #161616;
+  line-height: 215%;
+}
+
+.van-list-item--content > h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.van-list-item--content > p {
+  color: #4D4D4D;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
+
+
+/**/
+
+.host-vans-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: #FFF;
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 3rem;
+  min-height: 21rem;
+}
+
+
+/**/
+
+.van-detial-container {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+}
+
+.van-detial-container > img {
+  align-self: center;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.van-detial-container--content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-left: 1rem;
+}
+
+
+/**/
+
+.hvd-deatails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 150%;
+  font-weight: 500;
+}
+
+
+/**/
+
+.hvd-pricing--price {
+  display: flex;
+  align-items: center;
+}
+
+.hvd-pricing--price .van-price {
+  font-weight: 500;
+  font-size: 1.45rem;
+}
+
+.hvd-pricing--price .per-day {
+  color: #4D4D4D;
+  font-size: 1rem;
+}
+
+
+/**/
+
+.hvd-photos > img {
+  border-radius: 5px;
+  max-width: 18%;
+}
+
+
+/* NOT FOUND PAGE */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: auto 2.4rem;
+  justify-self: center;
+  font-size: 125%;
+}
+
+.not-found > a {
+  padding: 1.2rem;
+  background-color: #161616;
+  font-size: 125%;
+}
+
+
+/*** LOGIN PAGE ***/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  gap: 3rem;
+  font-size: 120%;
+  font-weight: 500;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;    
+}
+
+.login-form > input {
+  font-size: 1.1rem;
+  border: 1px solid rgba(209, 213, 219);
+  height: 3rem;
+  text-indent: 10px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+
+.login-form > input:focus {
+  outline: none;
+}
+
+.login-form > input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+
+.login-form > button {
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  background-color: #FF8C38;
+  padding: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+.login > p > a {
+  font-weight: 700;
+  color: #FF8C38;
+}
+
+.login--message {
+  color: #CC0000; 
+  text-align: center; 
+  margin-top: 1rem
+}
